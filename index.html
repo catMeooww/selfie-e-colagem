@@ -1,0 +1,40 @@
+<html>
+
+<head>
+    <title>Aplicativo de Colagem</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js" type="text/javascript"></script>
+     <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<center>
+    <h1>Selfie e Colagem</h1>
+    <hr>
+    <label style="color:red;">Depois de dar um comando, assim que o pop-up aparecer, clique em Permitir.</label>
+    <h3>Clique em iniciar para dar o comando de voz</h3>
+    <button onclick="start()" class="btn btn-info" id="start-btn">Iniciar</button>
+    <br>
+    <br>
+    <textarea id="textbox" readonly></textarea>
+    <br>
+    <label>Sua Webcam</label>
+    <div id="camera"></div>
+    <label>Suas Selfies</label>
+    <div id="resultShow">
+        <div class="container" id="resultado1" style="background-color: aqua;"></div>
+        <div class="container" id="resultado2" style="background-color: palevioletred;"></div>
+        <div class="container" id="resultado3" style="background-color: greenyellow;"></div>
+    </div>
+</center>
+<br>
+<div class="copy-righter-footer">Feito por: Guilherme</div>
+</body>
+
+</html>
