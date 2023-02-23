@@ -16,6 +16,13 @@ Recognition.onresult = function (event) {
     }
 }
 
+Webcam.set({
+    width:500,
+    height:400,
+    image_format:'jpeg',
+    jpeg_quality:90
+});
+
 function speak() {
     var synth = window.speechSynthesis;
     speakData = "Tirando Minha Selfie em 5 segundos";
@@ -31,17 +38,11 @@ function speak() {
         setTimeout(function () {
             takeSelfie3();
             console.log("selfie3")
-           }, 1000);
-       }, 1000);
+           }, 5000);
+       }, 5000);
     }, 5000);
 }
 
-Webcam.set({
-    width:500,
-    height:400,
-    image_format:'jpeg',
-    jpeg_quality:90
-});
 function takeSelfie()
 {
     Webcam.snap(function(data_uri) {
