@@ -1,5 +1,6 @@
 var SpeechRecognition = window.webkitSpeechRecognition;
 var Recognition = new SpeechRecognition();
+var imgId = "";
 
 function start() {
     Recognition.start();
@@ -30,34 +31,32 @@ function speak() {
     synth.speak(utterThis);
     Webcam.attach(document.getElementById("camera"));
     setTimeout(function () {
+    imgId = "selfie1" 
      takeSelfie();
-     console.log("selfie1")
-     setTimeout(function () {
-        takeSelfie2();
-        console.log("selfie2")
-        setTimeout(function () {
-            takeSelfie3();
-            console.log("selfie3")
-           }, 5000);
-       }, 5000);
     }, 5000);
-}
+    setTimeout(function () {
+    imgId = "selfie2" 
+         takeSelfie();
+        }, 6000);
+    setTimeout(function () {
+    imgId = "selfie3" 
+         takeSelfie();
+        }, 7000);
+    }
+
 
 function takeSelfie()
 {
+    console.log(imgId)
     Webcam.snap(function(data_uri) {
-        document.getElementById("resultado").innerHTML = '<img id="selfieImage"  style="width:90%;height:90%;box-shadow: 0 6px 8px 0 rgba(2, 2, 2, 0.2); src="'+data_uri+'"/>';
-    });
-}
-function takeSelfie2()
-{
-    Webcam.snap(function(data_uri) {
-        document.getElementById("resultado2").innerHTML = '<img id="selfieImage"  style="width:90%;height:90%;box-shadow: 0 6px 8px 0 rgba(2, 2, 2, 0.2); src="'+data_uri+'"/>';
-    });
-}
-function takeSelfie3()
-{
-    Webcam.snap(function(data_uri) {
-        document.getElementById("resultado3").innerHTML = '<img id="selfieImage"  style="width:90%;height:90%;box-shadow: 0 6px 8px 0 rgba(2, 2, 2, 0.2); src="'+data_uri+'"/>';
+        if (imgId == "selfie1"){
+        document.getElementById("resultado").innerHTML = '<img id="selfie1"  style="width:500;height:400;" src="'+data_uri+'"/>';
+       }  
+       if (imgId == "selfie2"){
+        document.getElementById("resultado2").innerHTML = '<img id="selfie2"  style="width:500;height:400;" src="'+data_uri+'"/>';
+       }  
+       if (imgId == "selfie1"){
+        document.getElementById("resultado3").innerHTML = '<img id="selfie3"  style="width:500;height:400;" src="'+data_uri+'"/>';
+       }  
     });
 }

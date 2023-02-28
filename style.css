@@ -24,3 +24,6 @@ body{
 img:hover{
     border-radius: 140px;
 }
+.column{
+    padding: 10px;
+}
